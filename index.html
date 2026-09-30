@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>典陸教育集團《新營站前校》115學年上學期 高一段考衝刺複習班</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --danlu-red: #E60012;
+            --danlu-dark: #1A1A1A;
+            --danlu-text: #333333;
+            --danlu-gray-text: #666666;
+            --card-bg: #F8FAFC;
+            --alert-bg: #FFF0F2;
+            --alert-border: #FFD6DC;
+            --border-color: #E2E8F0;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--danlu-text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* 頁首 Header (適合手機比例) */
+        header.site-header {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--danlu-red);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-box {
+            background-color: var(--danlu-red);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 0.62rem;
+            padding: 6px 8px;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+            text-align: left;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 2px;
+        }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--danlu-dark);
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .logo-sub {
+            font-size: 0.68rem;
+            color: var(--danlu-gray-text);
+            letter-spacing: 2px;
+            margin-top: 1px;
+        }
+
+        /* Hero 區塊 (9:16 手機最佳視角) */
+        .hero {
+            background-color: #F4F4F4;
+            padding: 40px 20px 36px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(2.8rem, 12vw, 6rem);
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.035);
+            white-space: nowrap;
+            pointer-events: none;
+            letter-spacing: 2px;
+        }
+
+        .hero-content {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle-tag {
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            color: var(--danlu-gray-text);
+            margin-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .hero-subtitle-tag span {
+            color: var(--danlu-red);
+            font-weight: 700;
+        }
+
+        .red-line {
+            width: 20px;
+            height: 2px;
+            background-color: var(--danlu-red);
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 1.6rem;
+            color: var(--danlu-dark);
+            font-weight: 900;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            color: var(--danlu-gray-text);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* 手機主要容器 */
+        .container {
+            width: 100%;
+            max-width: 500px; /* 鎖定手機瀏覽寬度 */
+            margin: 0 auto;
+            padding: 28px 18px 60px;
+        }
+
+        .section-block {
+            margin-bottom: 36px;
+        }
+
+        /* 區塊標題 */
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--danlu-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 20px;
+            background-color: var(--danlu-red);
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 0.98rem;
+            color: var(--danlu-text);
+            margin-bottom: 20px;
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        /* 特色格 (手機直向單欄) */
+        .features-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .feature-box {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border-left: 4px solid var(--danlu-red);
+        }
+
+        .feature-box h3 {
+            font-size: 1.05rem;
+            color: var(--danlu-red);
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .feature-box p {
+            font-size: 0.9rem;
+            color: var(--danlu-gray-text);
+            line-height: 1.55;
+        }
+
+        /* 提醒框 */
+        .notice-box {
+            background-color: var(--alert-bg);
+            border: 1px solid var(--alert-border);
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .notice-icon {
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .notice-content p {
+            font-size: 0.95rem;
+            color: var(--danlu-red);
+            font-weight: 700;
+            line-height: 1.55;
+        }
+
+        .notice-content span {
+            color: var(--danlu-text);
+        }
+
+        /* 課程時間表 (手機適配) */
+        .schedule-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .schedule-table th {
+            background-color: var(--card-bg);
+            color: var(--danlu-dark);
+            font-weight: 700;
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.88rem;
+        }
+
+        .schedule-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.92rem;
+            color: var(--danlu-text);
+            background-color: var(--white);
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .teacher-tag {
+            color: var(--danlu-dark);
+            font-weight: 700;
+        }
+
+        /* 表單區域 (適用手機直滑) */
+        .form-container {
+            width: 100%;
+            height: 620px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: var(--white);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .form-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 手機頁尾 */
+        footer {
+            background-color: var(--danlu-dark);
+            color: #A0A0A0;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.88rem;
+        }
+
+        footer strong {
+            color: var(--white);
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .footer-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        footer a {
+            color: #FF5263;
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頁首 (手機壓邊固定) -->
+    <header class="site-header">
+        <div class="brand-logo">
+            <div class="logo-box">
+                DANLU<br>EDUCATION<br>CENTER
+            </div>
+            <div class="logo-text-group">
+                <div class="logo-text">典陸教育集團</div>
+                <div class="logo-sub">1 2 年 一 貫 ． 專 業 品 牌</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero 區塊 (適合 9:16 手機比例) -->
+    <section class="hero">
+        <div class="hero-watermark">DANLU EDUCATION</div>
+        <div class="hero-content">
+            <div class="hero-subtitle-tag">
+                <span class="red-line"></span> ON THE WAY TO <span>STUDY</span>
+            </div>
+            <h1>《新營站前校》<br>115學年上學期 高一段考衝刺複習班</h1>
+            <p>國升高一關鍵首戰！掌握正確複習節奏，突破學習瓶頸，精準攻克段考核心考點。</p>
+        </div>
+    </section>
+
+    <!-- 主體內容 (手機觀看範圍) -->
+    <main class="container">
+
+        <!-- 致家長信與課程亮點 -->
+        <section class="section-block">
+            <h2 class="section-title">致親愛的家長</h2>
+            <p class="intro-text">
+                高中第一次段考即將到來，孩子剛從國中升上高一，面對題型變化與範圍加深，正是需要掌握正確複習節奏的關鍵時刻。為了幫助孩子在考前有效統整重點、突破學習瓶頸，我們特別規劃了<strong>「高一段考衝刺複習班」</strong>！
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>專業師資團隊</h3>
+                    <p>經驗豐富的優秀師資親自授課，精準鎖定核心考點。</p>
+                </div>
+                <div class="feature-box">
+                    <h3>高效重點梳理</h3>
+                    <p>系統化整理觀念與易錯題型，課後複習事半功倍。</p>
+                </div>
+                <div class="feature-box">
+                    <h3>實戰考題演練</h3>
+                    <p>掌握解題技巧與答題速度，提升考場應變力與自信。</p>
+                </div>
+            </div>
+
+            <div class="notice-box">
+                <div class="notice-icon">💡</div>
+                <div class="notice-content">
+                    <p><span>費用：10/09 全科刷題班 </span>500 元（含餐）</p>
+                    <p style="margin-top: 4px;">請於 10/4 (日) 前 <span>填寫下方線上回條並繳費，以利講義印製與餐點準備，逾時不候喔！</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 課程時間表 -->
+        <section class="section-block">
+            <h2 class="section-title">課程時間表 (115/10/09 五)</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">時間</th>
+                        <th style="width: 60%;">課程與師資</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00 - 10:30</td>
+                        <td>數學 — <span class="teacher-tag">志豪老師</span></td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 12:30</td>
+                        <td>英文 — <span class="teacher-tag">Ray 老師</span></td>
+                    </tr>
+                    <tr>
+                        <td>12:30 - 14:00</td>
+                        <td style="color: var(--danlu-gray-text);">午餐 + 休息</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>化學 — <span class="teacher-tag">陳赫老師</span></td>
+                    </tr>
+                    <tr>
+                        <td>15:30 - 17:00</td>
+                        <td style="color: var(--danlu-gray-text);">自修統整</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 線上報名表單 -->
+        <section class="section-block">
+            <h2 class="section-title">家長線上報名回條</h2>
+            <p style="color: var(--danlu-gray-text); font-size: 0.9rem; margin-bottom: 14px;">請填寫下方線上表單完成報名確認，資料將由班主任進行統籌處理。</p>
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdD3nBUN2k7-Ol8xzl3rfkPy1kVM9n-PFU47WbFjBetgp935A/viewform?embedded=true">載入中…</iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <strong>典陸教育集團《新營站前校》</strong>
+        <div class="footer-details">
+            <span>電話：06-6337160</span>
+            <span>負責老師：岳杰老師</span>
+            <span>地址：台南市新營區大同路 16-6號</span>
+        </div>
+        <p>報名諮詢 / 收件信箱：<br><a href="mailto:zwx1105@danlu-education.com">zwx1105@danlu-education.com</a></p>
+    </footer>
+
+</body>
+</html>
